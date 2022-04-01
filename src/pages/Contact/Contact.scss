@@ -1,0 +1,127 @@
+.Contact::-webkit-scrollbar {
+    display           : none !important;
+    -ms-overflow-style: none !important;
+    /* IE and Edge */
+    scrollbar-width   : none !important;
+    /* Firefox */
+}
+
+.Contact {
+    width   : 100%;
+    position: relative;
+
+
+
+    .contact-section-one {
+        height: calc(100vh - 80px);
+
+        .wayland-contact-side {
+            position : fixed;
+            top      : 50%;
+            transform: translateY(-50%);
+            height   : 420px;
+            width    : 260px;
+
+            .wayland-contact-side-animate {
+                height   : 420px;
+                width    : 40px;
+                position : absolute;
+                top      : 50%;
+                left     : 0;
+                transform: translateY(-50%);
+
+                &>img:nth-child(1) {
+                    position  : absolute;
+                    transition: all 2s ease-in-out;
+                    left      : -10px;
+                }
+
+                .contact-dots {
+                    position           : absolute;
+                    top                : -5px;
+                    right              : 10px;
+                    width              : 40px;
+                    height             : 450px;
+                    background-position: right;
+                    background-size    : 5px 26px;
+                    background-repeat  : repeat-y;
+                    transition         : all 2s ease-in-out;
+                }
+            }
+
+            .contact-title-1 {
+                position   : absolute;
+                top        : 50%;
+                right      : -5px;
+                transform  : translateY(-50%);
+                font-size  : 48px;
+                line-height: 60px;
+                transition : color 2s ease-in-out;
+                width      : 208px;
+
+                &>.animated-contact-text {
+                    width: 208px;
+
+
+                    &>span {
+
+                        display          : inline-block;
+                        animation        : scale-in-ver-bottom 1s ease-in-out 1.5s both;
+                        -moz-animation   : scale-in-ver-bottom 1s ease-in-out 1.5s both;
+                        -webkit-animation: scale-in-ver-bottom 1s ease-in-out 1.5s both;
+                        -ms-animation    : scale-in-ver-bottom 1s ease-in-out 1.5s both;
+
+                        &>span {}
+                    }
+                }
+            }
+        }
+
+        .contact-gradient-circle-wrap {
+            display        : flex;
+            justify-content: flex-start;
+            align-items    : center;
+            height         : 16px;
+            margin-bottom  : 4px;
+
+
+            .gradient-circle {
+                border-radius: 50%;
+                background   : linear-gradient(90deg, #FF457E 0%, #8721FF 125%);
+            }
+
+            &>:nth-child(1) {
+                width            : 12px;
+                height           : 12px;
+                animation        : fade-in 1s ease-in-out 2s both;
+                -moz-animation   : fade-in 1s ease-in-out 2s both;
+                -webkit-animation: fade-in 1s ease-in-out 2s both;
+                -ms-animation    : fade-in 1s ease-in-out 2s both;
+            }
+
+            &>:nth-child(2) {
+                width            : 8px;
+                height           : 8px;
+                margin           : 0 8px;
+                animation        : fade-in 1s ease-in-out 3.5s both;
+                -moz-animation   : fade-in 1s ease-in-out 3.5s both;
+                -webkit-animation: fade-in 1s ease-in-out 3.5s both;
+                -ms-animation    : fade-in 1s ease-in-out 3.5s both;
+            }
+
+            &>:nth-child(3) {
+                width            : 5px;
+                height           : 5px;
+                animation        : fade-in 1s ease-in-out 5s both;
+                -moz-animation   : fade-in 1s ease-in-out 5s both;
+                -webkit-animation: fade-in 1s ease-in-out 5s both;
+                -ms-animation    : fade-in 1s ease-in-out 5s both;
+            }
+        }
+    }
+}
+
+.contact-container {
+    padding-left : 180px;
+    padding-right: 155px;
+}

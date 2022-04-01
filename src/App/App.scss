@@ -1,0 +1,2384 @@
+// **************************** //
+//           ROADMAP            //
+// **************************** //
+
+//   *. @Import & Reset
+//   *. Loading Overlay
+//   *. Generic Styles
+//   01. COLORS
+//   02. TEXT FORMATTING
+//   03. LAYOUT
+//   04. BUTTONS
+//   05. FORMS
+//   06. TRANSITIONS
+//   07. ANIMATION OPTIONS
+//   08. SPACERS
+
+// **************************** //
+//        END OF ROADMAP        //
+// **************************** //
+
+
+
+/* ------------------------------------- */
+/* @Import + @Include + Reset .......... */
+/* ------------------------------------- */
+@import url('./assets/css/animista.css');
+@import url('./assets/fonts/fonts.scss');
+
+.Contact::-webkit-scrollbar {
+    display           : none !important;
+    -ms-overflow-style: none !important;
+    /* IE and Edge */
+    scrollbar-width   : none !important;
+    /* Firefox */
+}
+
+:root {
+    --white                : #ffffff;
+    --wayland-black        : #000000;
+    --wayland-dark         : #222324;
+    --wayland-gray         : #848483;
+    --wayland-white-smoke  : #f7f7f7;
+    --wayland-purple       : #b53bff;
+    --wayland-pink         : #ff457e;
+    --wayland-sunset       : #ff5353;
+    --wayland-orange       : #ff8f4a;
+    --wayland-yellow       : #ffdb45;
+    --wayland-blue         : #4694ff;
+    --wayland-green        : #30e594;
+    --wayland-blue-aqua    : linear-gradient(to right, #4694FF, #42f5e1);
+    --wayland-green-yellow : linear-gradient(to right, #30e594, #ffdb45);
+    --wayland-yellow-orange: linear-gradient(to right, #fdda45, #ff8f4a);
+    --wayland-pink-orange  : linear-gradient(to right, #ff457e, #ff8f4a);
+    --wayland-pink-purple  : linear-gradient(to right, #ff457e, #8721ff);
+    --wayland-orange-yellow: linear-gradient(to right, #ee4851, #f9c42e);
+    --breakpoint-xs        : 576px;
+    --breakpoint-sm        : 767px;
+    --breakpoint-md        : 991px;
+    --breakpoint-xl        : 1199px;
+    --breakpoint-xxl       : 1400px;
+}
+
+
+
+.bg-grad {
+    background: var(--wayland);
+}
+
+// Extra small <576px Small ≥576px Medium ≥768px Large ≥992px X-Large ≥1200px XX-Large ≥1400px
+/* ------------------------------------- */
+/* Loading Overlay ..................... */
+/* ------------------------------------- */
+
+
+*::selection {
+    color           : #fff;
+    background-color: #29A9E1;
+}
+
+*,
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    padding           : 0;
+    margin            : 0;
+    border            : 0;
+    box-sizing        : border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing   : border-box;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+main {
+    display: block;
+}
+
+textarea {
+    resize: none;
+}
+
+input,
+textarea,
+button,
+select,
+a,
+aside {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    outline: none;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+
+/* ------------------------------------- */
+/* *. Generic Styles ................... */
+/* ------------------------------------- */
+
+
+.App {
+    width                  : 100%;
+    position               : relative;
+    font-family            : 'Source Sans Pro', sans-serif;
+    -webkit-font-smoothing : antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow               : hidden;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+        monospace;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+.overflow-x-hidden {
+    overflow-x: hidden;
+}
+
+
+body {
+    background             : #fff;
+    font-family            : 'Source Sans Pro', sans-serif;
+    color                  : #FFFFFF;
+    -webkit-font-smoothing : antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight            : normal;
+    font-style             : normal;
+    font-size              : 1.6rem;
+    line-height            : 2;
+    font-weight            : 400;
+    letter-spacing         : 0;
+    position               : absolute;
+    height                 : 100%;
+}
+
+
+
+body,
+html {
+    margin                     : 0;
+    padding                    : 0;
+    -webkit-tap-highlight-color: transparent;
+    width                      : 100%;
+}
+
+body,
+input,
+select,
+textarea {
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition   : all 0.2s ease-in-out;
+    -ms-transition    : all 0.2s ease-in-out;
+    -o-transition     : all 0.2s ease-in-out;
+    transition        : all 0.2s ease-in-out;
+}
+
+a {
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition   : all 0.2s ease-in-out;
+    -ms-transition    : all 0.2s ease-in-out;
+    -o-transition     : all 0.2s ease-in-out;
+    transition        : all 0.2s ease-in-out;
+    cursor            : pointer;
+    text-decoration   : none;
+}
+
+a:hover {
+    color          : var(--wayland-orange);
+    text-decoration: none !important;
+    outline        : none !important;
+}
+
+a:active,
+a:focus {
+    outline        : none !important;
+    text-decoration: none !important;
+    color          : var(--wayland-purple);
+}
+
+button {
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition   : all 0.2s ease-in-out;
+    -ms-transition    : all 0.2s ease-in-out;
+    -o-transition     : all 0.2s ease-in-out;
+    transition        : all 0.2s ease-in-out;
+    cursor            : pointer;
+}
+
+button:hover,
+button:active,
+button:focus {
+    outline        : none !important;
+    text-decoration: none !important;
+    color          : #2B2D35;
+}
+
+strong,
+b {
+    font-weight: 700;
+}
+
+em,
+i {
+    font-style: italic;
+}
+
+i {
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition   : all 0.2s ease-in-out;
+    -ms-transition    : all 0.2s ease-in-out;
+    -o-transition     : all 0.2s ease-in-out;
+    transition        : all 0.2s ease-in-out;
+}
+
+p {
+    margin     : 0;
+    font-size  : 1rem;
+    line-height: 1.8;
+    color      : #666666;
+    font-weight: 400;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color      : #e5e5e5;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 400;
+    line-height: 1;
+    margin     : 0 0 1.5rem 0;
+}
+
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+    color          : inherit;
+    text-decoration: none;
+}
+
+h1 small,
+h2 small,
+h3 small,
+h4 small,
+h5 small,
+h6 small {
+    color: inherit;
+}
+
+h1 {
+    font-size: 7.2rem;
+}
+
+h2 {
+    font-size: 5.2rem;
+}
+
+h3 {
+    font-size: 2.5rem;
+}
+
+h4 {
+    font-size: 2rem;
+}
+
+h5 {
+    font-size: 1.8rem;
+}
+
+h6 {
+    font-size: 1.4rem;
+}
+
+sub {
+    font-size: 0.8em;
+    position : relative;
+    top      : 0.5em;
+}
+
+sup {
+    font-size: 0.8em;
+    position : relative;
+    top      : -0.5em;
+}
+
+.clear {
+    clear: both;
+}
+
+.display-none {
+    display: none !important;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.no-margin-bottom {
+    margin-bottom: 0;
+}
+
+.opacity-0 {
+    opacity   : 0 !important;
+    visibility: hidden !important;
+}
+
+.opacity-01 {
+    opacity: 0.1;
+}
+
+.opacity-02 {
+    opacity: 0.2;
+}
+
+.opacity-03 {
+    opacity: 0.3;
+}
+
+.opacity-04 {
+    opacity: 0.4;
+}
+
+.opacity-06 {
+    opacity: 0.6;
+}
+
+.opacity-07 {
+    opacity: 0.7;
+}
+
+.opacity-08 {
+    opacity: 0.8;
+}
+
+.opacity-09 {
+    opacity: 0.9;
+}
+
+.opacity-1 {
+    opacity   : 1 !important;
+    visibility: visible !important;
+}
+
+.index-999 {
+    z-index: -999 !important;
+}
+
+.copyright {
+    position   : absolute;
+    right      : 1rem;
+    top        : -2rem;
+    font-size  : 1rem;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.copyright a {
+    color: #1428a0;
+}
+
+.hr-devider {
+    width           : 100%;
+    height          : 1px;
+    background-color: var(--wayland-gray);
+    margin          : 0 auto;
+}
+
+/* ------------------------------------- */
+/* 1. COLORS ........................... */
+/* ------------------------------------- */
+
+
+/* .......... TEXT COLORS ............ */
+
+.text-white {
+    color: var(--white);
+}
+
+.text-black {
+    color: var(--wayland-black);
+}
+
+.text-dark {
+    color: var(--wayland-dark) !important;
+}
+
+.text-white-smoke {
+    color: var(--wayland-white-smoke) !important;
+}
+
+.text-pink {
+    color: var(--wayland-pink)
+}
+
+.text-sunset {
+    color: var(--wayland-sunset);
+}
+
+.text-light-orange {
+    color: rgba(255, 143, 74, 0.7);
+}
+
+.text-grad-orange-purple {
+    background             : #FF4C1D;
+    background             : -webkit-linear-gradient(to right, #FF4C1D 0%, #9B0063 100%);
+    background             : -moz-linear-gradient(to right, #FF4C1D 0%, #9B0063 100%);
+    background             : linear-gradient(to right, #FF4C1D 0%, #9B0063 100%);
+    background-clip        : text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* .......... BACKGROUND COLORS ............ */
+.bg-overlay-black {
+    height    : 100% !important;
+    background: rgba($color: #222324, $alpha: 0.85)
+}
+
+.bg-black {
+    background: var(--wayland-dark) !important;
+}
+
+.bg-gray {
+    background: var(--wayland-gray);
+}
+
+.bg-white {
+    background: var(--white) !important;
+}
+
+.bg-white-smoke {
+    background: var(--wayland-white-smoke) !important;
+}
+
+.bg-grad-pink-orange {
+    background: var(--wayland-pink-orange);
+}
+
+.bg-purple {
+    background: var(--wayland-purple);
+}
+
+.bg-pink {
+    background: var(--wayland-pink);
+}
+
+.bg-orange {
+    background: var(--wayland-orange);
+}
+
+.bg-yellow {
+    background: var(--wayland-yellow);
+}
+
+.bg-blue {
+    background: var(--wayland-blue);
+}
+
+.bg-green {
+    background: var(--wayland-green);
+}
+
+.bg-sunset {
+    background: var(--wayland-sunset);
+}
+
+.bg-grad-blue-aqua {
+    background: var(--wayland-blue-aqua);
+}
+
+.bg-grad-green-yellow {
+    background: var(--wayland-green-yellow);
+}
+
+.bg-grad-yellow-orange {
+    background: var(--wayland-yellow-orange);
+}
+
+.bg-grad-pink-purple {
+    background: var(--wayland-pink-purple);
+}
+
+.bg-grad-orange-yellow {
+    background: var(--wayland-orange-yellow);
+}
+
+
+/* ------------------------------------- */
+/* 2. TEXT FORMATTING .................. */
+/* ------------------------------------- */
+
+
+.fw-100 {
+    font-weight: 100;
+}
+
+.fw-300 {
+    font-weight: 300;
+}
+
+.fw-400 {
+    font-weight: 400;
+}
+
+.fw-500 {
+    font-weight: 500;
+}
+
+.fw-600 {
+    font-weight: 600;
+}
+
+.fw-700 {
+    font-weight: 700;
+}
+
+.fw-800 {
+    font-weight: 800;
+}
+
+.fw-900 {
+    font-weight: 900;
+}
+
+.f-primary {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.f-muli {
+    font-family: 'Muli', sans-serif;
+}
+
+.fs-12 {
+    font-size  : 1.2rem;
+    line-height: 1.6rem;
+}
+
+.fs-13 {
+    font-size  : 1.3rem;
+    line-height: 1.7rem;
+}
+
+.fs-14 {
+    font-size  : 1.4rem;
+    line-height: 1.8rem;
+}
+
+.fs-16 {
+    font-size  : 1.6rem;
+    line-height: 2.2rem;
+}
+
+.fs-18 {
+    font-size  : 1.8rem;
+    line-height: 2.1rem;
+}
+
+.paragraph {
+    font-size  : 1.6rem;
+    line-height: 2rem;
+}
+
+.fs-20 {
+    font-size  : 2rem;
+    line-height: 2.4rem;
+}
+
+.fs-22 {
+    font-size  : 2.2rem;
+    line-height: 2.8rem;
+}
+
+.fs-24 {
+    font-size  : 2.4rem;
+    line-height: 3.2rem;
+}
+
+.fs-25 {
+    font-size  : 2.5rem;
+    line-height: 2.9rem;
+}
+
+.fs-30 {
+    font-size  : 3rem;
+    line-height: 4.2rem;
+}
+
+.fs-40 {
+    font-size  : 4rem;
+    line-height: 5rem;
+}
+
+.fs-36 {
+    font-size  : 3.6rem;
+    line-height: 4.2rem;
+}
+
+.fs-48 {
+    font-size  : 4.8rem;
+    line-height: 5.5rem;
+}
+
+.fs-60 {
+    font-size  : 6.0rem;
+    line-height: 7.3rem;
+}
+
+.fs-64 {
+    font-size: 6.4rem;
+    font-size: 7.6rem;
+}
+
+.fs-144 {
+    font-size  : 14.4rem;
+    line-height: 18rem;
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+/* ------------------------------------- */
+/* 3. LAYOUT ........................... */
+/* ------------------------------------- */
+
+
+.vh-100 {
+    height: 100vh !important;
+
+    @media (max-width: 991px) {
+        height: auto !important;
+    }
+}
+
+.vh-90 {
+    height: 90vh;
+
+    @media (max-width: 991px) {
+        height: auto;
+    }
+}
+
+.vh-80 {
+    height: 80vh;
+
+    @media (max-width: 991px) {
+        height: auto;
+    }
+}
+
+.vh-70 {
+    height: 70vh;
+
+    @media (max-width: 991px) {
+        height: auto;
+    }
+}
+
+.vh-60 {
+    height: 60vh;
+
+    @media (max-width: 991px) {
+        height: auto;
+    }
+}
+
+.vh-50 {
+    height: 50vh;
+
+    @media (max-width: 991px) {
+        height: auto;
+    }
+}
+
+.vh-40 {
+    height: 40vh;
+
+    @media (max-width: 991px) {
+        height: auto;
+    }
+}
+
+.vh-30 {
+    height: 30vh;
+
+    @media (max-width: 991px) {
+        height: auto;
+    }
+}
+
+.vh-20 {
+    height: 20vh;
+
+    @media (max-width: 991px) {
+        height: auto;
+    }
+}
+
+.vh-10 {
+    height: 10vh;
+
+    @media (max-width: 991px) {
+        height: auto;
+    }
+}
+
+$container-max-widths: (sm: 540px,
+    md: 720px,
+    lg: 960px,
+    xl: 1140px,
+    xxl: 1320px);
+
+.container,
+.container-fluid,
+.container-lg,
+.container-md,
+.container-sm,
+.container-xl {
+    width        : 100%;
+    padding-right: 15px;
+    padding-left : 15px;
+    margin-right : auto;
+    margin-left  : auto;
+}
+
+.container {
+    max-width: 100%;
+
+    @media (min-width: 576px) {
+
+        max-width: 540px;
+    }
+
+    // Medium devices (tablets, 768px and up)
+    @media (min-width: 768px) {
+
+        max-width: 720px;
+    }
+
+    // Large devices (desktops, 992px and up)
+    @media (min-width: 992px) {
+        max-width: 960px;
+    }
+
+    // X-Large devices (large desktops, 1200px and up)
+    @media (min-width: 1200px) {
+        max-width: 1140px;
+    }
+
+    // XX-Large devices (larger desktops, 1400px and up)
+    @media (min-width: 1400px) {
+        max-width: 1320px;
+    }
+}
+
+.gradient-box-wrapper {
+    display      : inline-block;
+    padding      : 75px;
+    border-radius: 23px;
+}
+
+.section-gradient-wrap {
+    display            : inline-block;
+    font-weight        : 600;
+    vertical-align     : middle;
+    border-radius      : 23px;
+    transition         : all 0.25s ease-out;
+    user-select        : none;
+    -webkit-user-select: none;
+    -moz-user-select   : none;
+    -ms-user-select    : none;
+    background         : rgb(255, 76, 29);
+    background         : linear-gradient(90deg, rgba(255, 76, 29, 1) 0%, rgba(155, 0, 99, 1) 100%);
+    padding            : 1px;
+}
+
+
+.box-shadow-gray {
+    box-shadow: 0 0 10px 0 rgba($color: #000000, $alpha: 0.15);
+}
+
+
+/* ------------------------------------- */
+/* 04. BUTTONS .......................... */
+/* ------------------------------------- */
+.arrow-btn {
+    display : inline-block;
+    position: relative;
+    width   : 90px;
+    height  : 90px;
+
+    &:hover {
+        .arrow-btn-circle {
+            width : 85px;
+            height: 85px;
+        }
+    }
+
+    .arrow-btn-circle {
+        border       : 1px solid var(--wayland-dark);
+        width        : 60px;
+        height       : 60px;
+        border-radius: 50%;
+        transition   : all 1s ease-in-out;
+    }
+
+    &>span {
+        width      : 79px;
+        position   : absolute;
+        top        : 35%;
+        left       : 16.5px;
+        font-size  : 14px;
+        font-weight: 600;
+        line-height: 17px;
+        color      : #000000;
+    }
+
+    &>img {
+        position: absolute;
+        top     : 50%;
+        left    : 30px;
+    }
+}
+
+.rounded {
+    -webkit-border-radius: 8px;
+    -moz-border-radius   : 8px;
+    -ms-border-radius    : 8px;
+    border-radius        : 8px;
+}
+
+.no-select {
+    user-select        : none;
+    -webkit-user-select: none;
+    -moz-user-select   : none;
+    -ms-user-select    : none;
+}
+
+/* ------------------------------------- */
+/* 05. FORMS ............................ */
+/* ------------------------------------- */
+
+.form-control {
+    display           : block;
+    width             : 100%;
+    padding           : 0.375rem 0.75rem;
+    font-size         : 1rem;
+    font-weight       : 400;
+    line-height       : 1.5;
+    color             : #212529;
+    background-color  : #fff;
+    background-clip   : padding-box;
+    border            : 1px solid #ced4da;
+    -webkit-appearance: none;
+    -moz-appearance   : none;
+    appearance        : none;
+    border-radius     : 0.25rem;
+    transition        : border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.white-form:focus {
+    background: #fff;
+    color     : #000 !important;
+    border    : 1px solid transparent;
+    box-shadow: none;
+    box-shadow: 0 0 10px 0 rgba($color: #000000, $alpha: 0.25);
+}
+
+
+/* ------------------------------------- */
+/* 06. TRANSITIONS ...................... */
+/* ------------------------------------- */
+
+
+.transition-03-ease {
+    transition: all 0.3s ease;
+}
+
+.transition-04-ease {
+    transition: all 0.4s ease;
+}
+
+.transition-03-ease-in {
+    transition: all 0.3s ease-in;
+}
+
+.transition-04-ease-in {
+    transition: all 0.4s ease-in;
+}
+
+.transition-03-ease-out {
+    transition: all 0.3s ease-out;
+}
+
+.transition-04-ease-out {
+    transition: all 0.4s ease-out;
+}
+
+/* ------------------------------------- */
+/* 07. ANIMATION OPTIONS ................*/
+/* ------------------------------------- */
+.animation-infinite {
+    animation-iteration-count: infinite !important;
+}
+
+
+
+/* ------------------------------------- */
+/* 08. SPACERS ..........................*/
+/* ------------------------------------- */
+
+$spacer: 10px;
+$spacers: (0: 0,
+    //   0px
+    1: ($spacer * .5),
+    //   5px
+    2: $spacer,
+    //   10px 
+    3: ($spacer * 1.5),
+    //   15px
+    4: ($spacer * 2),
+    //   20px
+    5: ($spacer * 2.5),
+    //   25px
+    6 : ($spacer * 3),
+    //   30px
+    7: ($spacer * 3.5),
+    //   35px
+    8: ($spacer * 4),
+    //   40px
+    9: ($spacer * 4.5),
+    //   45px
+    10: ($spacer * 5),
+    //   50px
+    11: ($spacer * 5.5),
+    //   55px
+    12: ($spacer * 6),
+    //   60px
+    13: ($spacer * 6.5),
+    //   65px
+    14: ($spacer * 7),
+    //   70px
+    15: ($spacer * 7.5),
+    //   75px
+    16: ($spacer * 8),
+    //   80px
+    17: ($spacer * 8.5),
+    //   85px
+    18: ($spacer * 9),
+    //   90px
+    19: ($spacer * 9.5),
+    //   95px
+    20: ($spacer * 10),
+    //   100px
+);
+
+// Padding - All sides
+
+.p-0 {
+    padding: map-get($map: $spacers, $key: 0);
+}
+
+.p-05 {
+    padding: map-get($map: $spacers, $key: 1);
+}
+
+.p-10 {
+    padding: map-get($map: $spacers, $key: 2);
+}
+
+.p-15 {
+    padding: map-get($map: $spacers, $key: 3);
+}
+
+.p-20 {
+    padding: map-get($map: $spacers, $key: 4);
+}
+
+.p-25 {
+    padding: map-get($map: $spacers, $key: 5);
+}
+
+.p-30 {
+    padding: map-get($map: $spacers, $key: 6);
+}
+
+.p-35 {
+    padding: map-get($map: $spacers, $key: 7);
+}
+
+.p-40 {
+    padding: map-get($map: $spacers, $key: 8);
+}
+
+.p-45 {
+    padding: map-get($map: $spacers, $key: 9);
+}
+
+.p-50 {
+    padding: map-get($map: $spacers, $key: 10);
+}
+
+.p-55 {
+    padding: map-get($map: $spacers, $key: 11);
+}
+
+.p-60 {
+    padding: map-get($map: $spacers, $key: 12);
+}
+
+.p-65 {
+    padding: map-get($map: $spacers, $key: 13);
+}
+
+.p-70 {
+    padding: map-get($map: $spacers, $key: 14);
+}
+
+.p-75 {
+    padding: map-get($map: $spacers, $key: 15);
+}
+
+.p-80 {
+    padding: map-get($map: $spacers, $key: 16);
+}
+
+.p-85 {
+    padding: map-get($map: $spacers, $key: 17);
+}
+
+.p-90 {
+    padding: map-get($map: $spacers, $key: 18);
+}
+
+.p-95 {
+    padding: map-get($map: $spacers, $key: 19);
+}
+
+.p-100 {
+    padding: map-get($map: $spacers, $key: 20);
+}
+
+// Padding - Left
+
+.pl-0 {
+    padding-left: map-get($map: $spacers, $key: 0);
+}
+
+.pl-05 {
+    padding-left: map-get($map: $spacers, $key: 1);
+}
+
+.pl-10 {
+    padding-left: map-get($map: $spacers, $key: 2);
+}
+
+.pl-15 {
+    padding-left: map-get($map: $spacers, $key: 3);
+}
+
+.pl-20 {
+    padding-left: map-get($map: $spacers, $key: 4);
+}
+
+.pl-25 {
+    padding-left: map-get($map: $spacers, $key: 5);
+}
+
+.pl-30 {
+    padding-left: map-get($map: $spacers, $key: 6);
+}
+
+.pl-35 {
+    padding-left: map-get($map: $spacers, $key: 7);
+}
+
+.pl-40 {
+    padding-left: map-get($map: $spacers, $key: 8);
+}
+
+.pl-45 {
+    padding-left: map-get($map: $spacers, $key: 9);
+}
+
+.pl-50 {
+    padding-left: map-get($map: $spacers, $key: 10);
+}
+
+.pl-55 {
+    padding-left: map-get($map: $spacers, $key: 11);
+}
+
+.pl-60 {
+    padding-left: map-get($map: $spacers, $key: 12);
+}
+
+.pl-65 {
+    padding-left: map-get($map: $spacers, $key: 13);
+}
+
+.pl-70 {
+    padding-left: map-get($map: $spacers, $key: 14);
+}
+
+.pl-75 {
+    padding-left: map-get($map: $spacers, $key: 15);
+}
+
+.pl-80 {
+    padding-left: map-get($map: $spacers, $key: 16);
+}
+
+.pl-85 {
+    padding-left: map-get($map: $spacers, $key: 17);
+}
+
+.pl-90 {
+    padding-left: map-get($map: $spacers, $key: 18);
+}
+
+.pl-95 {
+    padding-left: map-get($map: $spacers, $key: 19);
+}
+
+.pl-100 {
+    padding-left: map-get($map: $spacers, $key: 20);
+}
+
+// Padding - Right
+
+.pr-0 {
+    padding-right: map-get($map: $spacers, $key: 0);
+}
+
+.pr-05 {
+    padding-right: map-get($map: $spacers, $key: 1);
+}
+
+.pr-10 {
+    padding-right: map-get($map: $spacers, $key: 2);
+}
+
+.pr-15 {
+    padding-right: map-get($map: $spacers, $key: 3);
+}
+
+.pr-20 {
+    padding-right: map-get($map: $spacers, $key: 4);
+}
+
+.pr-25 {
+    padding-right: map-get($map: $spacers, $key: 5);
+}
+
+.pr-30 {
+    padding-right: map-get($map: $spacers, $key: 6);
+}
+
+.pr-35 {
+    padding-right: map-get($map: $spacers, $key: 7);
+}
+
+.pr-40 {
+    padding-right: map-get($map: $spacers, $key: 8);
+}
+
+.pr-45 {
+    padding-right: map-get($map: $spacers, $key: 9);
+}
+
+.pr-50 {
+    padding-right: map-get($map: $spacers, $key: 10);
+}
+
+.pr-55 {
+    padding-right: map-get($map: $spacers, $key: 11);
+}
+
+.pr-60 {
+    padding-right: map-get($map: $spacers, $key: 12);
+}
+
+.pr-65 {
+    padding-right: map-get($map: $spacers, $key: 13);
+}
+
+.pr-70 {
+    padding-right: map-get($map: $spacers, $key: 14);
+}
+
+.pr-75 {
+    padding-right: map-get($map: $spacers, $key: 15);
+}
+
+.pr-80 {
+    padding-right: map-get($map: $spacers, $key: 16);
+}
+
+.pr-85 {
+    padding-right: map-get($map: $spacers, $key: 17);
+}
+
+.pr-90 {
+    padding-right: map-get($map: $spacers, $key: 18);
+}
+
+.pr-95 {
+    padding-right: map-get($map: $spacers, $key: 19);
+}
+
+.pr-100 {
+    padding-right: map-get($map: $spacers, $key: 20);
+}
+
+// Padding - Top
+
+.pt-0 {
+    padding-top: map-get($map: $spacers, $key: 0);
+}
+
+.pt-05 {
+    padding-top: map-get($map: $spacers, $key: 1);
+}
+
+.pt-10 {
+    padding-top: map-get($map: $spacers, $key: 2);
+}
+
+.pt-15 {
+    padding-top: map-get($map: $spacers, $key: 3);
+}
+
+.pt-20 {
+    padding-top: map-get($map: $spacers, $key: 4);
+}
+
+.pt-25 {
+    padding-top: map-get($map: $spacers, $key: 5);
+}
+
+.pt-30 {
+    padding-top: map-get($map: $spacers, $key: 6);
+}
+
+.pt-35 {
+    padding-top: map-get($map: $spacers, $key: 7);
+}
+
+.pt-40 {
+    padding-top: map-get($map: $spacers, $key: 8);
+}
+
+.pt-45 {
+    padding-top: map-get($map: $spacers, $key: 9);
+}
+
+.pt-50 {
+    padding-top: map-get($map: $spacers, $key: 10);
+}
+
+.pt-55 {
+    padding-top: map-get($map: $spacers, $key: 11);
+}
+
+.pt-60 {
+    padding-top: map-get($map: $spacers, $key: 12);
+}
+
+.pt-65 {
+    padding-top: map-get($map: $spacers, $key: 13);
+}
+
+.pt-70 {
+    padding-top: map-get($map: $spacers, $key: 14);
+}
+
+.pt-75 {
+    padding-top: map-get($map: $spacers, $key: 15);
+}
+
+.pt-80 {
+    padding-top: map-get($map: $spacers, $key: 16);
+}
+
+.pt-85 {
+    padding-top: map-get($map: $spacers, $key: 17);
+}
+
+.pt-90 {
+    padding-top: map-get($map: $spacers, $key: 18);
+}
+
+.pt-95 {
+    padding-top: map-get($map: $spacers, $key: 19);
+}
+
+.pt-100 {
+    padding-top: map-get($map: $spacers, $key: 20);
+}
+
+// Padding - Bottom
+
+.pb-0 {
+    padding-bottom: map-get($map: $spacers, $key: 0);
+}
+
+.pb-05 {
+    padding-bottom: map-get($map: $spacers, $key: 1);
+}
+
+.pb-10 {
+    padding-bottom: map-get($map: $spacers, $key: 2);
+}
+
+.pb-15 {
+    padding-bottom: map-get($map: $spacers, $key: 3);
+}
+
+.pb-20 {
+    padding-bottom: map-get($map: $spacers, $key: 4);
+}
+
+.pb-25 {
+    padding-bottom: map-get($map: $spacers, $key: 5);
+}
+
+.pb-30 {
+    padding-bottom: map-get($map: $spacers, $key: 6);
+}
+
+.pb-35 {
+    padding-bottom: map-get($map: $spacers, $key: 7);
+}
+
+.pb-40 {
+    padding-bottom: map-get($map: $spacers, $key: 8);
+}
+
+.pb-45 {
+    padding-bottom: map-get($map: $spacers, $key: 9);
+}
+
+.pb-50 {
+    padding-bottom: map-get($map: $spacers, $key: 10);
+}
+
+.pb-55 {
+    padding-bottom: map-get($map: $spacers, $key: 11);
+}
+
+.pb-60 {
+    padding-bottom: map-get($map: $spacers, $key: 12);
+}
+
+.pb-65 {
+    padding-bottom: map-get($map: $spacers, $key: 13);
+}
+
+.pb-70 {
+    padding-bottom: map-get($map: $spacers, $key: 14);
+}
+
+.pb-75 {
+    padding-bottom: map-get($map: $spacers, $key: 15);
+}
+
+.pb-80 {
+    padding-bottom: map-get($map: $spacers, $key: 16);
+}
+
+.pb-85 {
+    padding-bottom: map-get($map: $spacers, $key: 17);
+}
+
+.pb-90 {
+    padding-bottom: map-get($map: $spacers, $key: 18);
+}
+
+.pb-95 {
+    padding-bottom: map-get($map: $spacers, $key: 19);
+}
+
+.pb-100 {
+    padding-bottom: map-get($map: $spacers, $key: 20);
+}
+
+// Padding - Horizontal
+
+.px-0 {
+    padding-left : map-get($map: $spacers, $key: 0);
+    padding-right: map-get($map: $spacers, $key: 0);
+}
+
+.px-05 {
+    padding-left : map-get($map: $spacers, $key: 1);
+    padding-right: map-get($map: $spacers, $key: 1);
+}
+
+.px-10 {
+    padding-left : map-get($map: $spacers, $key: 2);
+    padding-right: map-get($map: $spacers, $key: 2);
+}
+
+.px-15 {
+    padding-left : map-get($map: $spacers, $key: 3);
+    padding-right: map-get($map: $spacers, $key: 3);
+}
+
+.px-20 {
+    padding-left : map-get($map: $spacers, $key: 4);
+    padding-right: map-get($map: $spacers, $key: 4);
+}
+
+.px-25 {
+    padding-left : map-get($map: $spacers, $key: 5);
+    padding-right: map-get($map: $spacers, $key: 5);
+}
+
+.px-30 {
+    padding-left : map-get($map: $spacers, $key: 6);
+    padding-right: map-get($map: $spacers, $key: 6);
+}
+
+.px-35 {
+    padding-left : map-get($map: $spacers, $key: 7);
+    padding-right: map-get($map: $spacers, $key: 7);
+}
+
+.px-40 {
+    padding-left : map-get($map: $spacers, $key: 8);
+    padding-right: map-get($map: $spacers, $key: 8);
+}
+
+.px-45 {
+    padding-left : map-get($map: $spacers, $key: 9);
+    padding-right: map-get($map: $spacers, $key: 9);
+}
+
+.px-50 {
+    padding-left : map-get($map: $spacers, $key: 10);
+    padding-right: map-get($map: $spacers, $key: 10);
+}
+
+.px-55 {
+    padding-left : map-get($map: $spacers, $key: 11);
+    padding-right: map-get($map: $spacers, $key: 11);
+}
+
+.px-60 {
+    padding-left : map-get($map: $spacers, $key: 12);
+    padding-right: map-get($map: $spacers, $key: 12);
+}
+
+.px-65 {
+    padding-left : map-get($map: $spacers, $key: 13);
+    padding-right: map-get($map: $spacers, $key: 13);
+}
+
+.px-70 {
+    padding-left : map-get($map: $spacers, $key: 14);
+    padding-right: map-get($map: $spacers, $key: 14);
+}
+
+.px-75 {
+    padding-left : map-get($map: $spacers, $key: 15);
+    padding-right: map-get($map: $spacers, $key: 15);
+}
+
+.px-80 {
+    padding-left : map-get($map: $spacers, $key: 16);
+    padding-right: map-get($map: $spacers, $key: 16);
+}
+
+.px-85 {
+    padding-left : map-get($map: $spacers, $key: 17);
+    padding-right: map-get($map: $spacers, $key: 17);
+}
+
+.px-90 {
+    padding-left : map-get($map: $spacers, $key: 18);
+    padding-right: map-get($map: $spacers, $key: 18);
+}
+
+.px-95 {
+    padding-left : map-get($map: $spacers, $key: 19);
+    padding-right: map-get($map: $spacers, $key: 19);
+}
+
+.px-100 {
+    padding-left : map-get($map: $spacers, $key: 20);
+    padding-right: map-get($map: $spacers, $key: 20);
+}
+
+// Padding - Vertical
+
+.py-0 {
+    padding-top   : map-get($map: $spacers, $key: 0);
+    padding-bottom: map-get($map: $spacers, $key: 0);
+}
+
+.py-05 {
+    padding-top   : map-get($map: $spacers, $key: 1);
+    padding-bottom: map-get($map: $spacers, $key: 1);
+}
+
+.py-10 {
+    padding-top   : map-get($map: $spacers, $key: 2);
+    padding-bottom: map-get($map: $spacers, $key: 2);
+}
+
+.py-15 {
+    padding-top   : map-get($map: $spacers, $key: 3);
+    padding-bottom: map-get($map: $spacers, $key: 3);
+}
+
+.py-20 {
+    padding-top   : map-get($map: $spacers, $key: 4);
+    padding-bottom: map-get($map: $spacers, $key: 4);
+}
+
+.py-25 {
+    padding-top   : map-get($map: $spacers, $key: 5);
+    padding-bottom: map-get($map: $spacers, $key: 5);
+}
+
+.py-30 {
+    padding-top   : map-get($map: $spacers, $key: 6);
+    padding-bottom: map-get($map: $spacers, $key: 6);
+}
+
+.py-35 {
+    padding-top   : map-get($map: $spacers, $key: 7);
+    padding-bottom: map-get($map: $spacers, $key: 7);
+}
+
+.py-40 {
+    padding-top   : map-get($map: $spacers, $key: 8);
+    padding-bottom: map-get($map: $spacers, $key: 8);
+}
+
+.py-45 {
+    padding-top   : map-get($map: $spacers, $key: 9);
+    padding-bottom: map-get($map: $spacers, $key: 9);
+}
+
+.py-50 {
+    padding-top   : map-get($map: $spacers, $key: 10);
+    padding-bottom: map-get($map: $spacers, $key: 10);
+}
+
+.py-55 {
+    padding-top   : map-get($map: $spacers, $key: 11);
+    padding-bottom: map-get($map: $spacers, $key: 11);
+}
+
+.py-60 {
+    padding-top   : map-get($map: $spacers, $key: 12);
+    padding-bottom: map-get($map: $spacers, $key: 12);
+}
+
+.py-65 {
+    padding-top   : map-get($map: $spacers, $key: 13);
+    padding-bottom: map-get($map: $spacers, $key: 13);
+}
+
+.py-70 {
+    padding-top   : map-get($map: $spacers, $key: 14);
+    padding-bottom: map-get($map: $spacers, $key: 14);
+}
+
+.py-75 {
+    padding-top   : map-get($map: $spacers, $key: 15);
+    padding-bottom: map-get($map: $spacers, $key: 15);
+}
+
+.py-80 {
+    padding-top   : map-get($map: $spacers, $key: 16);
+    padding-bottom: map-get($map: $spacers, $key: 16);
+}
+
+.py-85 {
+    padding-top   : map-get($map: $spacers, $key: 17);
+    padding-bottom: map-get($map: $spacers, $key: 17);
+}
+
+.py-90 {
+    padding-top   : map-get($map: $spacers, $key: 18);
+    padding-bottom: map-get($map: $spacers, $key: 18);
+}
+
+.py-95 {
+    padding-top   : map-get($map: $spacers, $key: 19);
+    padding-bottom: map-get($map: $spacers, $key: 19);
+}
+
+.py-100 {
+    padding-top   : map-get($map: $spacers, $key: 20);
+    padding-bottom: map-get($map: $spacers, $key: 20);
+}
+
+// Margin - All sides
+
+.m-0 {
+    margin: map-get($map: $spacers, $key: 0);
+}
+
+.m-05 {
+    margin: map-get($map: $spacers, $key: 1);
+}
+
+.m-10 {
+    margin: map-get($map: $spacers, $key: 2);
+}
+
+.m-15 {
+    margin: map-get($map: $spacers, $key: 3);
+}
+
+.m-20 {
+    margin: map-get($map: $spacers, $key: 4);
+}
+
+.m-25 {
+    margin: map-get($map: $spacers, $key: 5);
+}
+
+.m-30 {
+    margin: map-get($map: $spacers, $key: 6);
+}
+
+.m-35 {
+    margin: map-get($map: $spacers, $key: 7);
+}
+
+.m-40 {
+    margin: map-get($map: $spacers, $key: 8);
+}
+
+.m-45 {
+    margin: map-get($map: $spacers, $key: 9);
+}
+
+.m-50 {
+    margin: map-get($map: $spacers, $key: 10);
+}
+
+.m-55 {
+    margin: map-get($map: $spacers, $key: 11);
+}
+
+.m-60 {
+    margin: map-get($map: $spacers, $key: 12);
+}
+
+.m-65 {
+    margin: map-get($map: $spacers, $key: 13);
+}
+
+.m-70 {
+    margin: map-get($map: $spacers, $key: 14);
+}
+
+.m-75 {
+    margin: map-get($map: $spacers, $key: 15);
+}
+
+.m-80 {
+    margin: map-get($map: $spacers, $key: 16);
+}
+
+.m-85 {
+    margin: map-get($map: $spacers, $key: 17);
+}
+
+.m-90 {
+    margin: map-get($map: $spacers, $key: 18);
+}
+
+.m-95 {
+    margin: map-get($map: $spacers, $key: 19);
+}
+
+.m-100 {
+    margin: map-get($map: $spacers, $key: 20);
+}
+
+// Margin - Left
+.ml-0 {
+    margin-left: map-get($map: $spacers, $key: 0);
+}
+
+.ml-05 {
+    margin-left: map-get($map: $spacers, $key: 1);
+}
+
+.ml-10 {
+    margin-left: map-get($map: $spacers, $key: 2);
+}
+
+.ml-15 {
+    margin-left: map-get($map: $spacers, $key: 3);
+}
+
+.ml-20 {
+    margin-left: map-get($map: $spacers, $key: 4);
+}
+
+.ml-25 {
+    margin-left: map-get($map: $spacers, $key: 5);
+}
+
+.ml-30 {
+    margin-left: map-get($map: $spacers, $key: 6);
+}
+
+.ml-35 {
+    margin-left: map-get($map: $spacers, $key: 7);
+}
+
+.ml-40 {
+    margin-left: map-get($map: $spacers, $key: 8);
+}
+
+.ml-45 {
+    margin-left: map-get($map: $spacers, $key: 9);
+}
+
+.ml-50 {
+    margin-left: map-get($map: $spacers, $key: 10);
+}
+
+.ml-55 {
+    margin-left: map-get($map: $spacers, $key: 11);
+}
+
+.ml-60 {
+    margin-left: map-get($map: $spacers, $key: 12);
+}
+
+.ml-65 {
+    margin-left: map-get($map: $spacers, $key: 13);
+}
+
+.ml-70 {
+    margin-left: map-get($map: $spacers, $key: 14);
+}
+
+.ml-75 {
+    margin-left: map-get($map: $spacers, $key: 15);
+}
+
+.ml-80 {
+    margin-left: map-get($map: $spacers, $key: 16);
+}
+
+.ml-85 {
+    margin-left: map-get($map: $spacers, $key: 17);
+}
+
+.ml-90 {
+    margin-left: map-get($map: $spacers, $key: 18);
+}
+
+.ml-95 {
+    margin-left: map-get($map: $spacers, $key: 19);
+}
+
+.ml-100 {
+    margin-left: map-get($map: $spacers, $key: 20);
+}
+
+// Margin - Right
+.mr-0 {
+    margin-right: map-get($map: $spacers, $key: 0);
+}
+
+.mr-05 {
+    margin-right: map-get($map: $spacers, $key: 1);
+}
+
+.mr-10 {
+    margin-right: map-get($map: $spacers, $key: 2);
+}
+
+.mr-15 {
+    margin-right: map-get($map: $spacers, $key: 3);
+}
+
+.mr-20 {
+    margin-right: map-get($map: $spacers, $key: 4);
+}
+
+.mr-25 {
+    margin-right: map-get($map: $spacers, $key: 5);
+}
+
+.mr-30 {
+    margin-right: map-get($map: $spacers, $key: 6);
+}
+
+.mr-35 {
+    margin-right: map-get($map: $spacers, $key: 7);
+}
+
+.mr-40 {
+    margin-right: map-get($map: $spacers, $key: 8);
+}
+
+.mr-45 {
+    margin-right: map-get($map: $spacers, $key: 9);
+}
+
+.mr-50 {
+    margin-right: map-get($map: $spacers, $key: 10);
+}
+
+.mr-55 {
+    margin-right: map-get($map: $spacers, $key: 11);
+}
+
+.mr-60 {
+    margin-right: map-get($map: $spacers, $key: 12);
+}
+
+.mr-65 {
+    margin-right: map-get($map: $spacers, $key: 13);
+}
+
+.mr-70 {
+    margin-right: map-get($map: $spacers, $key: 14);
+}
+
+.mr-75 {
+    margin-right: map-get($map: $spacers, $key: 15);
+}
+
+.mr-80 {
+    margin-right: map-get($map: $spacers, $key: 16);
+}
+
+.mr-85 {
+    margin-right: map-get($map: $spacers, $key: 17);
+}
+
+.mr-90 {
+    margin-right: map-get($map: $spacers, $key: 18);
+}
+
+.mr-95 {
+    margin-right: map-get($map: $spacers, $key: 19);
+}
+
+.mr-100 {
+    margin-right: map-get($map: $spacers, $key: 20);
+}
+
+// Margin - Top
+.mt-0 {
+    margin-top: map-get($map: $spacers, $key: 0);
+}
+
+.mt-05 {
+    margin-top: map-get($map: $spacers, $key: 1);
+}
+
+.mt-10 {
+    margin-top: map-get($map: $spacers, $key: 2);
+}
+
+.mt-15 {
+    margin-top: map-get($map: $spacers, $key: 3);
+}
+
+.mt-20 {
+    margin-top: map-get($map: $spacers, $key: 4);
+}
+
+.mt-25 {
+    margin-top: map-get($map: $spacers, $key: 5);
+}
+
+.mt-30 {
+    margin-top: map-get($map: $spacers, $key: 6);
+}
+
+.mt-35 {
+    margin-top: map-get($map: $spacers, $key: 7);
+}
+
+.mt-40 {
+    margin-top: map-get($map: $spacers, $key: 8);
+}
+
+.mt-45 {
+    margin-top: map-get($map: $spacers, $key: 9);
+}
+
+.mt-50 {
+    margin-top: map-get($map: $spacers, $key: 10);
+}
+
+.mt-55 {
+    margin-top: map-get($map: $spacers, $key: 11);
+}
+
+.mt-60 {
+    margin-top: map-get($map: $spacers, $key: 12);
+}
+
+.mt-65 {
+    margin-top: map-get($map: $spacers, $key: 13);
+}
+
+.mt-70 {
+    margin-top: map-get($map: $spacers, $key: 14);
+}
+
+.mt-75 {
+    margin-top: map-get($map: $spacers, $key: 15);
+}
+
+.mt-80 {
+    margin-top: map-get($map: $spacers, $key: 16);
+}
+
+.mt-85 {
+    margin-top: map-get($map: $spacers, $key: 17);
+}
+
+.mt-90 {
+    margin-top: map-get($map: $spacers, $key: 18);
+}
+
+.mt-95 {
+    margin-top: map-get($map: $spacers, $key: 19);
+}
+
+.mt-100 {
+    margin-top: map-get($map: $spacers, $key: 20);
+}
+
+// Margin - Bottom
+.mb-0 {
+    margin-bottom: map-get($map: $spacers, $key: 0);
+}
+
+.mb-05 {
+    margin-bottom: map-get($map: $spacers, $key: 1);
+}
+
+.mb-10 {
+    margin-bottom: map-get($map: $spacers, $key: 2);
+}
+
+.mb-15 {
+    margin-bottom: map-get($map: $spacers, $key: 3);
+}
+
+.mb-20 {
+    margin-bottom: map-get($map: $spacers, $key: 4);
+}
+
+.mb-25 {
+    margin-bottom: map-get($map: $spacers, $key: 5);
+}
+
+.mb-30 {
+    margin-bottom: map-get($map: $spacers, $key: 6);
+}
+
+.mb-35 {
+    margin-bottom: map-get($map: $spacers, $key: 7);
+}
+
+.mb-40 {
+    margin-bottom: map-get($map: $spacers, $key: 8);
+}
+
+.mb-45 {
+    margin-bottom: map-get($map: $spacers, $key: 9);
+}
+
+.mb-50 {
+    margin-bottom: map-get($map: $spacers, $key: 10);
+}
+
+.mb-55 {
+    margin-bottom: map-get($map: $spacers, $key: 11);
+}
+
+.mb-60 {
+    margin-bottom: map-get($map: $spacers, $key: 12);
+}
+
+.mb-65 {
+    margin-bottom: map-get($map: $spacers, $key: 13);
+}
+
+.mb-70 {
+    margin-bottom: map-get($map: $spacers, $key: 14);
+}
+
+.mb-75 {
+    margin-bottom: map-get($map: $spacers, $key: 15);
+}
+
+.mb-80 {
+    margin-bottom: map-get($map: $spacers, $key: 16);
+}
+
+.mb-85 {
+    margin-bottom: map-get($map: $spacers, $key: 17);
+}
+
+.mb-90 {
+    margin-bottom: map-get($map: $spacers, $key: 18);
+}
+
+.mb-95 {
+    margin-bottom: map-get($map: $spacers, $key: 19);
+}
+
+.mb-100 {
+    margin-bottom: map-get($map: $spacers, $key: 20);
+}
+
+// Margin - Horizontal
+
+.mx-0 {
+    margin-left : map-get($map: $spacers, $key: 0);
+    margin-right: map-get($map: $spacers, $key: 0);
+}
+
+.mx-05 {
+    margin-left : map-get($map: $spacers, $key: 1);
+    margin-right: map-get($map: $spacers, $key: 1);
+}
+
+.mx-10 {
+    margin-left : map-get($map: $spacers, $key: 2);
+    margin-right: map-get($map: $spacers, $key: 2);
+}
+
+.mx-15 {
+    margin-left : map-get($map: $spacers, $key: 3);
+    margin-right: map-get($map: $spacers, $key: 3);
+}
+
+.mx-20 {
+    margin-left : map-get($map: $spacers, $key: 4);
+    margin-right: map-get($map: $spacers, $key: 4);
+}
+
+.mx-25 {
+    margin-left : map-get($map: $spacers, $key: 5);
+    margin-right: map-get($map: $spacers, $key: 5);
+}
+
+.mx-30 {
+    margin-left : map-get($map: $spacers, $key: 6);
+    margin-right: map-get($map: $spacers, $key: 6);
+}
+
+.mx-35 {
+    margin-left : map-get($map: $spacers, $key: 7);
+    margin-right: map-get($map: $spacers, $key: 7);
+}
+
+.mx-40 {
+    margin-left : map-get($map: $spacers, $key: 8);
+    margin-right: map-get($map: $spacers, $key: 8);
+}
+
+.mx-45 {
+    margin-left : map-get($map: $spacers, $key: 9);
+    margin-right: map-get($map: $spacers, $key: 9);
+}
+
+.mx-50 {
+    margin-left : map-get($map: $spacers, $key: 10);
+    margin-right: map-get($map: $spacers, $key: 10);
+}
+
+.mx-55 {
+    margin-left : map-get($map: $spacers, $key: 11);
+    margin-right: map-get($map: $spacers, $key: 11);
+}
+
+.mx-60 {
+    margin-left : map-get($map: $spacers, $key: 12);
+    margin-right: map-get($map: $spacers, $key: 12);
+}
+
+.mx-65 {
+    margin-left : map-get($map: $spacers, $key: 13);
+    margin-right: map-get($map: $spacers, $key: 13);
+}
+
+.mx-70 {
+    margin-left : map-get($map: $spacers, $key: 14);
+    margin-right: map-get($map: $spacers, $key: 14);
+}
+
+.mx-75 {
+    margin-left : map-get($map: $spacers, $key: 15);
+    margin-right: map-get($map: $spacers, $key: 15);
+}
+
+.mx-80 {
+    margin-left : map-get($map: $spacers, $key: 16);
+    margin-right: map-get($map: $spacers, $key: 16);
+}
+
+.mx-85 {
+    margin-left : map-get($map: $spacers, $key: 17);
+    margin-right: map-get($map: $spacers, $key: 17);
+}
+
+.mx-90 {
+    margin-left : map-get($map: $spacers, $key: 18);
+    margin-right: map-get($map: $spacers, $key: 18);
+}
+
+.mx-95 {
+    margin-left : map-get($map: $spacers, $key: 19);
+    margin-right: map-get($map: $spacers, $key: 19);
+}
+
+.mx-100 {
+    margin-left : map-get($map: $spacers, $key: 20);
+    margin-right: map-get($map: $spacers, $key: 20);
+}
+
+// Margin - Vertical
+
+.my-0 {
+    margin-top   : map-get($map: $spacers, $key: 0);
+    margin-bottom: map-get($map: $spacers, $key: 0);
+}
+
+.my-05 {
+    margin-top   : map-get($map: $spacers, $key: 1);
+    margin-bottom: map-get($map: $spacers, $key: 1);
+}
+
+.my-10 {
+    margin-top   : map-get($map: $spacers, $key: 2);
+    margin-bottom: map-get($map: $spacers, $key: 2);
+}
+
+.my-15 {
+    margin-top   : map-get($map: $spacers, $key: 3);
+    margin-bottom: map-get($map: $spacers, $key: 3);
+}
+
+.my-20 {
+    margin-top   : map-get($map: $spacers, $key: 4);
+    margin-bottom: map-get($map: $spacers, $key: 4);
+}
+
+.my-25 {
+    margin-top   : map-get($map: $spacers, $key: 5);
+    margin-bottom: map-get($map: $spacers, $key: 5);
+}
+
+.my-30 {
+    margin-top   : map-get($map: $spacers, $key: 6);
+    margin-bottom: map-get($map: $spacers, $key: 6);
+}
+
+.my-35 {
+    margin-top   : map-get($map: $spacers, $key: 7);
+    margin-bottom: map-get($map: $spacers, $key: 7);
+}
+
+.my-40 {
+    margin-top   : map-get($map: $spacers, $key: 8);
+    margin-bottom: map-get($map: $spacers, $key: 8);
+}
+
+.my-45 {
+    margin-top   : map-get($map: $spacers, $key: 9);
+    margin-bottom: map-get($map: $spacers, $key: 9);
+}
+
+.my-50 {
+    margin-top   : map-get($map: $spacers, $key: 10);
+    margin-bottom: map-get($map: $spacers, $key: 10);
+}
+
+.my-55 {
+    margin-top   : map-get($map: $spacers, $key: 11);
+    margin-bottom: map-get($map: $spacers, $key: 11);
+}
+
+.my-60 {
+    margin-top   : map-get($map: $spacers, $key: 12);
+    margin-bottom: map-get($map: $spacers, $key: 12);
+}
+
+.my-65 {
+    margin-top   : map-get($map: $spacers, $key: 13);
+    margin-bottom: map-get($map: $spacers, $key: 13);
+}
+
+.my-70 {
+    margin-top   : map-get($map: $spacers, $key: 14);
+    margin-bottom: map-get($map: $spacers, $key: 14);
+}
+
+.my-75 {
+    margin-top   : map-get($map: $spacers, $key: 15);
+    margin-bottom: map-get($map: $spacers, $key: 15);
+}
+
+.my-80 {
+    margin-top   : map-get($map: $spacers, $key: 16);
+    margin-bottom: map-get($map: $spacers, $key: 16);
+}
+
+.my-85 {
+    margin-top   : map-get($map: $spacers, $key: 17);
+    margin-bottom: map-get($map: $spacers, $key: 17);
+}
+
+.my-90 {
+    margin-top   : map-get($map: $spacers, $key: 18);
+    margin-bottom: map-get($map: $spacers, $key: 18);
+}
+
+.my-95 {
+    margin-top   : map-get($map: $spacers, $key: 19);
+    margin-bottom: map-get($map: $spacers, $key: 19);
+}
+
+.my-100 {
+    margin-top   : map-get($map: $spacers, $key: 20);
+    margin-bottom: map-get($map: $spacers, $key: 20);
+}
+
+.mx-auto {
+    margin-left : auto !important;
+    margin-right: auto !important;
+}
+
+// ****** END OF SPACERS ******

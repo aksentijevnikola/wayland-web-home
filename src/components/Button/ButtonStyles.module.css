@@ -1,0 +1,81 @@
+.navbar_btn_wrap {
+    background     : var(--wayland-dark);
+    background-clip: padding-box;
+}
+
+.navbar_btn_wrap::before {
+    background: var(--wayland-pink-orange);
+}
+
+.navbar_btn_wrap:hover {
+    background-color: transparent;
+    color           : #FFFFFF;
+}
+
+.navbar_btn_wrap:hover .navbar_btn {
+    background-color: transparent;
+    color           : #FFFFFF;
+}
+
+.navbar_btn_wrap:hover::before {
+    transition: background 0.3 ease-in-out;
+    background: transparent;
+}
+
+.navbar_btn {
+    background: var(--wayland-dark);
+}
+
+.navbar_btn p {
+    color: var(--white);
+}
+
+.navbar_btn:hover {
+    background-color: transparent;
+    color           : #FFFFFF;
+}
+
+.navbar_btn_transition {
+    background: var(--wayland-pink-orange);
+}
+
+/* ABOUT */
+.about_btn_wrap {
+    background     : var(--wayland-white);
+    background-clip: padding-box;
+}
+
+.about_btn_wrap::before {
+    background: var(--wayland-pink-orange);
+}
+
+.about_btn_wrap:hover {
+    background-color: transparent;
+    color           : #FFFFFF;
+}
+
+.about_btn_wrap:hover .navbar_btn {
+    background-color: transparent;
+    color           : #FFFFFF;
+}
+
+.about_btn_wrap:hover::before {
+    background: transparent;
+}
+
+.about_btn {
+    background: #FFFFFF;
+}
+
+.about_btn p {
+    color: var(--wayland-dark);
+}
+
+.about_btn:hover {
+    background-color: transparent;
+    color           : #FFFFFF;
+}
+
+.about_btn_transition {
+    background: var(--wayland-pink-orange);
+}

@@ -1,0 +1,597 @@
+.Product {
+    overflow: hidden;
+
+    .product-section-1 {
+        position       : relative;
+        height         : calc(100vh - 80px);
+        display        : flex;
+        justify-content: flex-start;
+        align-items    : center;
+
+        .product-lines-wrap {
+            position: absolute;
+            top     : 0;
+            left    : 0;
+            overflow: hidden;
+            width   : 100%;
+            height  : 100%;
+            z-index : 0;
+
+            img {
+                position: absolute;
+
+                &:nth-child(1) {
+                    width     : 100%;
+                    object-fit: cover;
+                    position  : absolute;
+                    top       : 50%;
+                    left      : 0;
+                    transform : translateY(-50%);
+                }
+
+                &:nth-child(2) {
+                    position  : absolute;
+                    top       : 40%;
+                    left      : 0;
+                    object-fit: cover;
+                    transform : translateY(-50%);
+                    animation : line-movement-4 8s ease-out infinite;
+                }
+
+                &:nth-child(3) {
+                    object-fit: cover;
+                    top       : 45%;
+                    left      : 0;
+                    transform : translateY(-50%);
+                    animation : line-movement-1 8s ease-out infinite;
+                }
+
+                &:nth-child(4) {
+                    object-fit: cover;
+                    top       : 50%;
+                    left      : 0;
+                    transform : translateY(-50%);
+                    animation : line-movement-3 8s ease-out infinite;
+                }
+
+                &:nth-child(5) {
+                    object-fit: cover;
+                    top       : 55%;
+                    left      : 0;
+                    transform : translateY(-50%);
+                    animation : line-movement-4 8s ease-out infinite;
+                }
+            }
+        }
+
+        .circle-img-wrap {
+            z-index      : 1;
+            position     : relative;
+            width        : 495px;
+            height       : 495px;
+            border-radius: 50%;
+            border       : 3px solid rgba(247, 247, 247, 0.8);
+            padding      : 10px;
+            filter       : drop-shadow(10px 10px 20px rgba(0, 0, 0, 0.25));
+
+            .img-black-overlay {
+                position     : absolute;
+                top          : 0;
+                left         : 0;
+                width        : 100%;
+                height       : 100%;
+                border-radius: 50%;
+                background   : rgba(34, 35, 36, 0.8);
+                box-shadow   : 10px 10px 20px rgba(0, 0, 0, 0.25);
+                z-index      : 1;
+            }
+
+            img {
+                width        : 100%;
+                height       : 100%;
+                border-radius: 50%;
+                object-fit   : cover;
+                z-index      : -1;
+            }
+        }
+
+        #waylandProductCarouselControls {
+            z-index    : 1;
+            position   : relative;
+            height     : 100%;
+            width      : calc(100% - 495px);
+            display    : flex;
+            align-items: center;
+            padding    : 0;
+            right      : 0;
+            max-width  : 650px;
+
+            .carousel-inner {
+                margin-top: -50px;
+
+                .carousel-item {
+                    p {
+                        &:nth-child(2) {
+                            padding-left: 3.5px;
+                        }
+
+                        color            : rgba(247, 247, 247, 0.8);
+                        animation        : fade-in-bottom 1s ease-in-out 1.25s both;
+                        -moz-animation   : fade-in-bottom 1s ease-in-out 1.25s both;
+                        -webkit-animation: fade-in-bottom 1s ease-in-out 1.25s both;
+                        -ms-animation    : fade-in-bottom 1s ease-in-out 1.25s both;
+                    }
+                }
+            }
+
+            .carousel-control-prev {
+                .product-carousel-action-btn {
+                    left: 0;
+                }
+            }
+
+            .carousel-control-next {
+                .product-carousel-action-btn {
+                    right: 0;
+                }
+            }
+
+            .carousel-control-prev,
+            .carousel-control-next {
+                position: absolute;
+                top     : unset !important;
+                bottom  : 160px !important;
+                width   : 50px;
+                height  : 50px;
+
+                .product-carousel-action-btn {
+
+                    position: absolute;
+                    width   : 50px;
+                    height  : 50px;
+
+                    &:hover .circle {
+                        animation: border 2s ease forwards;
+                        cursor   : pointer;
+                    }
+
+                    &>img {
+                        border-radius: 50%;
+                        position     : absolute;
+                        top          : 21px;
+                        left         : 50%;
+                        transform    : translateX(-50%);
+                        z-index      : 2;
+
+
+                    }
+
+                    .circle {
+                        position     : absolute;
+                        z-index      : 1;
+                        overflow     : hidden;
+                        width        : 50px;
+                        height       : 50px;
+                        border-radius: 50%;
+                        background   : #222324;
+                        box-shadow   : -25px -25px 0 2px #222324, 25px -25px 0 2px #222324, 0px 0px 0px 2px #fff;
+
+
+
+                        &:hover {
+                            animation: border 1.5s ease forwards;
+                            cursor   : pointer;
+                        }
+
+                        @keyframes border {
+                            0% {
+                                box-shadow: -25px -25px 0 2px #222324, 25px -25px 0 2px #222324, 0px 0px 0 2px #f7f7f7;
+                            }
+
+                            25% {
+                                box-shadow: 0px -55px 0 2px #222324, 0px -55px 0 2px #222324, 0px 0px 0 2px #f7f7f7;
+                            }
+
+                            26% {
+                                box-shadow: 0px -55px 2px transparent, 0px -55px 0 2px transparent, 0 0 0 2px #f7f7f7;
+                            }
+
+                            50% {
+                                box-shadow: 0px -55px 2px transparent, 0px -55px 0 2px transparent, 0 0 0 2px #f7f7f7;
+                            }
+
+                            75% {
+                                box-shadow: 0 -55px 0 2px transparent, 0px -55px 0 2px transparent, 0 0 0 2px #f7f7f7;
+                            }
+
+                            100% {
+                                box-shadow: 0 -55px 0 2px transparent, 0px -55px 0 2px transparent, 0 0 0 2px #f7f7f7;
+                            }
+                        }
+
+                    }
+
+                    &:hover {
+
+                        .product-carousel-btn-border:before {
+                            width           : 100%;
+                            transition      : 0.1s;
+                            transition-delay: 0.3s;
+                        }
+
+                        .product-carousel-btn-border:after {
+                            transition-delay: 0.1s;
+                        }
+
+                        .product-carousel-btn-border i:before,
+                        .product-carousel-btn-border i:after {
+                            height    : 100%;
+                            transition: 0.1s;
+                        }
+
+                        .product-carousel-btn-border i:after {
+                            transition-delay: 0.2s;
+                        }
+                    }
+
+                    .product-carousel-btn-border {
+
+                        width        : 60px;
+                        height       : 60px;
+                        border       : 1px solid transparent;
+                        border-radius: 50%;
+
+                        &>i {
+                            width        : 100%;
+                            height       : 100%;
+                            display      : block;
+                            border-radius: 50%;
+                        }
+
+                        &:before {
+                            content         : "";
+                            position        : absolute;
+                            top             : 0;
+                            right           : 0;
+                            width           : 0;
+                            background-color: var(--wayland-sunset);
+                            border-radius   : 50%;
+                            height          : 1px;
+                            border-radius   : 50%;
+                        }
+
+                        &:after {
+                            content         : "";
+                            position        : absolute;
+                            background-color: var(--wayland-sunset);
+                            top             : auto;
+                            bottom          : 0;
+                            right           : auto;
+                            left            : 0;
+                            height          : 1px;
+                            width           : 100%;
+                            border-radius   : 50%;
+                        }
+
+
+
+                        &>i:before,
+                        &>i:after {
+                            content         : "";
+                            position        : absolute;
+                            top             : 0;
+                            left            : 0;
+                            width           : 1px;
+                            height          : 50%;
+                            background-color: var(--wayland-sunset);
+                        }
+
+                        &>i::before {
+                            left  : 0;
+                            bottom: 0;
+                            right : auto;
+                            top   : auto;
+                        }
+
+                        &>i:after {
+                            left  : auto;
+                            right : 0;
+                            top   : auto;
+                            bottom: 0;
+                            width : 0.5px;
+                        }
+
+                    }
+                }
+
+            }
+        }
+
+    }
+
+    .product-section-2 {
+        height          : 100vh;
+        background-image: url(../../../public/assets/img/product/grid-gray-lines.png);
+
+        &>div {
+            height: 100%;
+
+            &>div {
+                height: 100%;
+
+                &>div {
+                    position: relative;
+
+                }
+            }
+
+        }
+
+        .product-card-image-bottom {
+            position       : absolute;
+            top            : 50%;
+            left           : 0;
+            transform      : translateY(-50%);
+            width          : 300px;
+            height         : 400px;
+            display        : flex;
+            flex-direction : column;
+            justify-content: space-between;
+            padding        : 18px 12px;
+            align-items    : center;
+            border-radius  : 8px;
+            border         : 1px solid rgba(34, 35, 36, 0.5);
+            box-shadow     : 4px 4px 10px -3px rgba(0, 0, 0, 0.25);
+            z-index        : 1;
+
+
+            &:hover {
+                background-position: bottom left;
+
+                p {
+                    transition: all .5s ease-out;
+                    color     : #f7f7f7 !important;
+                }
+
+            }
+        }
+
+        .product-card-image-top {
+            position       : absolute;
+            left           : 280px;
+            top            : 49%;
+            transform      : translateY(-50%);
+            width          : 300px;
+            height         : 438px;
+            flex-direction : column;
+            justify-content: flex-start;
+            padding        : 60px 12px 0 12px;
+            border         : 1px solid rgba(34, 35, 36, 0.5);
+            box-shadow     : 4px 4px 10px -3px rgba(0, 0, 0, 0.25);
+            border-radius  : 8px;
+            z-index        : 0;
+
+            &>img {
+                margin-bottom: 34px;
+            }
+        }
+
+        .product-card-image-bottom,
+        .product-card-image-top {
+            background         : linear-gradient(to top, var(--wayland-dark) 50%, #F7F7F7 50%);
+            background-size    : 100% 200%;
+            background-position: top left;
+            transition         : all .5s ease-out;
+
+            &:hover {
+                background-position: bottom left;
+
+                p {
+                    transition: all .5s ease-out;
+                    color     : #f7f7f7 !important;
+                }
+
+            }
+        }
+    }
+
+    .product-section-3 {
+
+
+
+
+        &>div>div>div:nth-child(1) {
+            height: 100%;
+
+            &>div:nth-child(1) {
+                max-width: 495px;
+                position : relative;
+                height   : 72px;
+
+                .product-blue-blur-circle {
+                    position         : absolute;
+                    top              : -25px;
+                    left             : 10px;
+                    width            : 130px;
+                    height           : 130px;
+                    cursor           : pointer;
+                    border-radius    : 48% 55% 55% 45%;
+                    filter           : blur(17px);
+                    background       : linear-gradient(101.09deg, #4694FF 6.41%, #42F5E1 93.23%);
+                    opacity          : 0.9;
+                    animation        : morphing 8s, spin 8s linear infinite;
+                    -moz-animation   : morphing 8s, spin 8s linear infinite;
+                    -webkit-animation: morphing 8s, spin 8s linear infinite;
+                    -ms-animation    : morphing 8s, spin 8s linear infinite;
+                    z-index          : 0;
+                }
+
+                &>div>p {
+                    position: absolute;
+                    z-index : 3;
+                }
+            }
+
+            &>div:nth-child(2) {
+                height: 280px;
+
+                .product-card-section-3 {
+                    width        : 285px;
+                    border-radius: 8px;
+
+                    &:nth-child(1) {
+                        height     : 240px;
+                        padding-top: 20px;
+                        box-shadow : 4px 4px 10px -3px rgba(0, 0, 0, 0.25);
+                        z-index    : 3;
+                    }
+
+                    &:nth-child(2) {
+                        height     : 260px;
+                        padding-top: 40px;
+                        box-shadow : 2px 4px 15px -3px rgba(0, 0, 0, 0.25);
+                        z-index    : 2;
+                    }
+
+                    &:nth-child(3) {
+                        height     : 280px;
+                        padding-top: 60px;
+                        box-shadow : 10px 10px 20px -3px rgba(0, 0, 0, 0.25);
+                        z-index    : 1;
+                    }
+
+                    &>div {
+
+                        &>img {
+                            width : 80px;
+                            height: 80px;
+                        }
+
+                    }
+                }
+            }
+        }
+
+        &>div>div>div:nth-child(2) {
+            border-width: 2px;
+            border-right: 0;
+            border-style: solid;
+            border-image:
+                linear-gradient(to bottom, rgba(247, 247, 247, 1) 0%, rgba(69, 168, 249, 0.9) 48%, rgba(66, 245, 225, 1) 56%, rgba(247, 247, 247, 1) 100%) 1 20%;
+
+            .product-list {
+                list-style-image: url(../../../public/assets/img/shapes/list-circle.png);
+                padding-left    : 20px;
+                margin-left     : 20px;
+            }
+        }
+    }
+}
+
+@keyframes line-movement-4 {
+    0% {
+        left: 0px;
+    }
+
+    45% {
+        left: -5%;
+    }
+
+    75% {
+        left: 5%;
+    }
+
+    100% {
+        left: 0;
+    }
+}
+
+@-webkit-keyframes line-movement-4 {
+    0% {
+        left: 0px;
+    }
+
+    45% {
+        left: -5%;
+    }
+
+    75% {
+        left: 5%;
+    }
+
+    100% {
+        left: 0;
+    }
+}
+
+@keyframes line-movement-1 {
+    0% {
+        left: -10%;
+    }
+
+    45% {
+        left: 5%;
+    }
+
+    75% {
+        left: 0%;
+    }
+
+    100% {
+        left: -10%;
+    }
+}
+
+@-webkit-keyframes line-movement-1 {
+    0% {
+        left: -10%;
+    }
+
+    45% {
+        left: 5%;
+    }
+
+    75% {
+        left: 0%;
+    }
+
+    100% {
+        left: -10%;
+    }
+}
+
+@keyframes line-movement-3 {
+    0% {
+        left: 10%;
+    }
+
+    45% {
+        left: -5%;
+    }
+
+    75% {
+        left: 0%;
+    }
+
+    100% {
+        left: 10%;
+    }
+}
+
+@-webkit-keyframes line-movement-3 {
+    0% {
+        left: 10%;
+    }
+
+    45% {
+        left: -5%;
+    }
+
+    75% {
+        left: 0%;
+    }
+
+    100% {
+        left: 10%;
+    }
+}
